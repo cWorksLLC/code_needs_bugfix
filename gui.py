@@ -1,17 +1,25 @@
 from tkinter import *
-from tkinter import messagebox
-
-def thing(self):
-	print("test")
 
 root = Tk()
-root.title("my very cool gui programm")
-root.geometry("400x250")
 
-label = Label(text="test lable", font="12", pady="10")
-label.pack(side=TOP)
 
-btn1 = Button(text="test button", background="#000000", foreground="#ffffff", padx="0", pady="0", font="12", command=thing)
-btn1.pack(side=BOTTOM)
+class Main:
+    def __init__(self):
+        root.title("my very cool gui program")
+        root.geometry("400x250")
+        self.wigets()
+        root.mainloop()
 
-root.mainloop()
+    def wigets(self):
+        label = Label(root, text="test lable", font="12", pady="10")
+        label.pack(side=TOP)
+        btn1 = Button(root, text="test button", padx="0", pady="0", font="12",
+                      command=self.thing)
+        btn1.pack(side=BOTTOM)
+
+    def thing(self):
+        print("test")
+
+
+if __name__ == "__main__":
+    Main()
